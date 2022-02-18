@@ -71,17 +71,52 @@ Needs a custom model id :
 import random; random.randrange(1 << 30, 1 << 31)
 """
 
-main_model = genanki.Model(
-  1463873326,
-  'Chinese PinYin Audio',
+
+class MyNote(genanki.Note):
+  @property
+  def guid(self):
+    return genanki.guid_for(self.fields[0], self.fields[1])
+
+
+my_deck = genanki.Deck(
+  2059400110,
+  'Chinese HSK 1')
+
+"""
+List of cards to be generated:
+ - drawn character to english translation
+ - drawn character to pinyin
+ - pinyin to translation
+ - english translation to pinyin
+ - audio to translation
+ - translation to audio
+"""
+
+
+my_model = genanki.Model(
+  1091735104,
+  'Main Model',
   fields=[
-    {'name': 'Question'},
-    {'name': 'Answer'},
+    {'name': 'Audio'},
+    {'name': 'DrawnCharacters'},
+    {'name': 'PinYin'},
+    {'name': 'Translation'},
   ],
   templates=[
     {
-      'name': 'Card 1',
-      'qfmt': '{{Question}}',
+      'name': 'CharactersToEnglish',
+      'qfmt': '{{Question}}<br>{{MyMedia}}',
       'afmt': '{{FrontSide}}<hr id="answer">{{Answer}}',
     },
   ])
+
+my_note = genanki.Note(
+  model=my_model,
+  fields=['Capital of Argentina', 'Buenos Aires'])
+
+my_deck.add_note(my_note)
+
+my_package = genanki.Package(my_deck)
+my_package.media_files = ['sound.mp3', 'images/image.jpg']
+
+
