@@ -13,6 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-size: 7vmin;
 }
 
 .top {
@@ -35,7 +36,6 @@ body {
 
 .pinyin {
     height: 15%;
-    font-size: 7vmin;
     color: white;
 }
 
@@ -43,12 +43,23 @@ body {
     height: 60%;
     width: 100%;
     background: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
 }
 
 .english {
-    height: 15%;
-    font-size: 7vmin;
-    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    width: 100%;
+    color: #18ADAB;
+}
+
+.audio {
+    height: 40%;
+    width: 100%;
 }
 
 .replay-button svg {
@@ -57,10 +68,10 @@ body {
 }
 
 .replay-button svg circle {
-    fill: blue;
+    fill: #18ADAB;
 }
 
 .replay-button svg path {
     stroke: white;
-    fill: green;
+    fill: white;
 }
