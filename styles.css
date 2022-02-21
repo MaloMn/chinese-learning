@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    font-family: Ubuntu;
+    color: black;
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.top {
+    background-color: #18ADAB;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hanzi {
+    height: 50%;
+}
+
+.hanzi svg {
+    height: 100%;
+}
+
+.pinyin {
+    height: 15%;
+    font-size: 7vmin;
+    color: white;
+}
+
+.bottom {
+    height: 60%;
+    width: 100%;
+    background: white;
+}
+
+.english {
+    height: 15%;
+    font-size: 7vmin;
+    color: white;
+}
+
+.replay-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.replay-button svg circle {
+    fill: blue;
+}
+
+.replay-button svg path {
+    stroke: white;
+    fill: green;
+}
